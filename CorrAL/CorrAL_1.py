@@ -43,16 +43,17 @@ print('t-score:', score_T)
 from skfeature.function.statistical_based import low_variance
 p = 0.1
 selected_features = low_variance.low_variance_feature_selection(X, p*(1-p))
-#print('selected features:', selected_features)
+print('selected features:', selected_features)
 
 #############################################
 ## Similarity Based Feature Selection Methods
 
+## ReliefF
 from skfeature.function.similarity_based import reliefF
 score_Rel = reliefF.reliefF(X, y)
 print('ReliefF score:', score_Rel)
 
+## Fisher Score
 from skfeature.function.similarity_based import fisher_score
 score_Fisher = fisher_score.fisher_score(X, y)
 print('Fisher score:', score_Fisher)
-
